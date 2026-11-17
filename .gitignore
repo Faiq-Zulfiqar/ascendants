@@ -13,6 +13,10 @@ venv/
 # dependencies
 node_modules/
 
+# production build
+dist/
+dist-ssr/
+
 # next.js
 .next/
 out/

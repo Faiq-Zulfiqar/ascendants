@@ -14,21 +14,15 @@ We are building a lightweight **Project Management CRM** for **NovaWorks Technol
 
 ## 2. Supabase Connection Credentials
 
-You can use `@supabase/supabase-js` or standard HTTP `fetch`.
+We've already created two drop-in files in the root folder that your React app can import directly:
+1. `supabaseClient.js` — Auto-detects environment variables across Vite (`import.meta.env`), Next.js, and Create React App (`process.env`), with fallback defaults.
+2. `aiService.js` — Provides `parseAndSaveTranscript(transcript)` which calls Gemini and atomically saves to Supabase in one call!
 
+You can also initialize Supabase manually:
 ```env
-NEXT_PUBLIC_SUPABASE_URL=https://zdbahnaoedddseazlcsn.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpkYmFobmFvZWRkZHNlYXpsY3NuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ4NTIxNjUsImV4cCI6MjExMDQyODE2NX0.aK1gRaLfYAmPV5-EJQ5bEBU7rBn3XCZdHRbWwmi3--w
-```
-
-### Initializing Supabase in Frontend:
-```javascript
-import { createClient } from '@supabase/supabase-js';
-
-export const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-);
+# Supported Prefixes in .env:
+VITE_SUPABASE_URL=https://zdbahnaoedddseazlcsn.supabase.co
+VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpkYmFobmFvZWRkZHNlYXpsY3NuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ4NTIxNjUsImV4cCI6MjExMDQyODE2NX0.aK1gRaLfYAmPV5-EJQ5bEBU7rBn3XCZdHRbWwmi3--w
 ```
 
 ---
