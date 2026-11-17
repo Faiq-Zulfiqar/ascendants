@@ -1,0 +1,22 @@
+# environment variables
+.env
+.env.local
+.env.*.local
+
+# python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+
+# dependencies
+node_modules/
+
+# next.js
+.next/
+out/
+
+# misc
+.DS_Store
+*.pem
